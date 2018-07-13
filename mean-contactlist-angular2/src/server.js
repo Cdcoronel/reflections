@@ -36,14 +36,13 @@ function handleError(res, reason, message, code) {
     console.log("ERROR: " + reason);
     res.status(code || 500).json({"error": message});
   }
-
   
-/*  "/api/contacts"
- *    GET: finds all contacts
- *    POST: creates a new contact
- */
-
-app.get("/api/contacts", function(req, res) {
+  /*  "/api/contacts"
+   *    GET: finds all contacts
+   *    POST: creates a new contact
+   */
+  
+  app.get("/api/contacts", function(req, res) {
 
     db.collection(CONTACTS_COLLECTION).find({}).toArray(function(err, docs) {
         if (err) {
@@ -52,13 +51,9 @@ app.get("/api/contacts", function(req, res) {
           res.status(200).json(docs);
         }
       });
-
-
-
-
-});
-
-app.post("/api/contacts", function(req, res) {
+  });
+  
+  app.post("/api/contacts", function(req, res) {
 
     var newContact = req.body;
     newContact.createDate = new Date();
@@ -75,19 +70,20 @@ app.post("/api/contacts", function(req, res) {
       });
     }
 
-});
 
-/*  "/api/contacts/:id"
- *    GET: find contact by id
- *    PUT: update contact by id
- *    DELETE: deletes contact by id
- */
-
-app.get("/api/contacts/:id", function(req, res) {
-});
-
-app.put("/api/contacts/:id", function(req, res) {
-});
-
-app.delete("/api/contacts/:id", function(req, res) {
-});
+  });
+  
+  /*  "/api/contacts/:id"
+   *    GET: find contact by id
+   *    PUT: update contact by id
+   *    DELETE: deletes contact by id
+   */
+  
+  app.get("/api/contacts/:id", function(req, res) {
+  });
+  
+  app.put("/api/contacts/:id", function(req, res) {
+  });
+  
+  app.delete("/api/contacts/:id", function(req, res) {
+  });
