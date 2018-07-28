@@ -1,0 +1,8 @@
+{
+  "name": "NotesApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "b9de519f"
+}
